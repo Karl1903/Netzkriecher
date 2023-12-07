@@ -1,0 +1,86 @@
+<div class="node">
+    <div class="nodeDetail">
+        <h2>Node Details</h2>
+        <table>
+            <tr>
+                <td class= "tLabel">URL</td>
+                <td class="tValue">{{node.url}}</td>
+            </tr>
+            <tr>
+                <td class= "tLabel">Depth</td>
+                <td class="tValue">{{node.depth}}</td>
+            </tr>
+            <tr>
+                <td class= "tLabel">DocId</td>
+                <td class="tValue">{{node.docId}}</td>
+            </tr>
+            <tr>
+                <td class= "tLabel">ParentDocId</td>
+                <td class="tValue">{{node.parentDocId}}</td>
+            </tr>
+            <tr>
+                <td class= "tLabel">DOM-Parent</td>
+                <td class="tValue">{{node.domParent}}</td>
+            </tr>
+        </table>      
+    </div>
+    <div class="nodeArrs">
+        <h2></h2>
+        <div>
+            <app-button class="headerOption" color=#333 fontSize="6pt" text="Int Links" (btnClick)="show('intLinks')"></app-button>
+            <app-button class="headerOption" color=#333 fontSize="6pt" text="Ext Links" (btnClick)="show('extLinks')"></app-button>
+            <app-button class="headerOption" color=#333 fontSize="6pt" text="Int Media" (btnClick)="show('intMedia')"></app-button>
+            <app-button class="headerOption" color=#333 fontSize="6pt" text="Ext Media" (btnClick)="show('extMedia')"></app-button>
+            <app-button class="headerOption" color=#333 fontSize="6pt" text="DomChilds" (btnClick)="show('domChilds')"></app-button>
+        </div>
+        <div class=clearFix></div>
+
+        <div id="intLinks" style="display:none">
+            <table>
+                <tr *ngFor="let link of node.intLinks; let i = index">
+                    <td class= "tLabel">{{i}}</td>
+                    <td class="tValue">{{link}}</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="extLinks" style="display:none">
+            <tr *ngFor="let link of node.extLinks; let i = index">
+                <td class= "tLabel">{{i}}</td>
+                <td class="tValue">{{link}}</td>
+            </tr>
+        </div>
+
+        
+        <div id="intMedia" style="display: none">
+            <table>
+                <tbody>
+                    <tr *ngFor="let row of intMedia; let i = index">
+                        <td *ngFor="let url of row">
+                            <img class="img" src={{url}}>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="extMedia" style="display: none">
+            <table>
+                <tbody>
+                    <tr *ngFor="let row of extMedia; let i = index">
+                        <td *ngFor="let url of row">
+                            <img class="img" src={{url}}>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="domChilds" style="display:none">
+            <tr *ngFor="let link of node.domChilds; let i = index">
+                <td class= "tLabel">{{i}}</td>
+                <td class="tValue">{{link}}</td>
+            </tr>
+        </div>
+    </div>
+</div>

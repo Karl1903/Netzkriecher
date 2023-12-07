@@ -1,0 +1,33 @@
+debug: true
+
+
+spring:
+  redis:
+    #host: 'redis-master.default.svc.cluster.local'
+    host: 'localhost'
+    password: ''
+    port: 6379
+  application:
+    name: crawler
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      group:
+        readiness:
+          include: ping
+  health:
+    redis:
+      enabled: false
+    readinessState:
+      enabled: true
+    livenessState:
+      enabled: true
+
+server:
+  shutdown: graceful
+  port: 8081

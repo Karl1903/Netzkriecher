@@ -1,0 +1,53 @@
+
+<div class="outer">
+  <div class="headerOption">
+    <app-button color=#800080 text="Crawl my Websites" (click)="crawlNewWebsites()"></app-button>
+  </div>
+  <div class="clearfix">
+    <div class="header">
+        <app-button class="headerOption" fontSize="8pt" color=#666 toggle toggleColor="#333" text="Deselect All" (btnClick)="deselectAll()"></app-button>
+        <app-button class="headerOption" fontSize="8pt" color=#666 toggle toggleColor="#333" text="Show DOM-Connections" (btnClick)="showConnections()"></app-button>
+        <app-button class="headerOption" fontSize="8pt" color=#666 toggle toggleColor="#333" text="Show Labels" (btnClick)="showLabels()"></app-button>
+        <app-button class="headerOption" fontSize="8pt" color=#666 toggle toggleColor="#333" text="Show All Connections" (btnClick)="showAllConnections()"></app-button>
+
+      </div>
+  </div>
+  <div class="graph">
+      <div echarts [options]="options" (chartMouseOver)="onChartMouseOver($event)"
+        (chartClick)="onChartClick($event)" class="demo-chart">
+      </div>
+  </div>
+
+  <div>
+    <app-node-info></app-node-info>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="headerOption">
+    <label>Add new Website to your Crawling-List:</label>
+    <input type="text" name="websiteNameForCrawler" [(ngModel)]="websiteNameForCrawler">
+  </div>
+
+  <div class="headerOption">
+    <app-button color=#800080 text="Add Website" (click)="addWebsiteToCrawlerList()"></app-button>
+  </div>
+  <div class="clearfix"></div>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let website of crawlerList">
+      {{website}}
+      <app-button color=#800080 text='Create Website Graph' (click)="getWebsiteGraph(website)"></app-button>
+      <app-button color=#800080 text='Delete Website' (click)="deleteWebsiteFromCrawlerList(website)"> </app-button>
+    </mat-list-item>
+  </mat-nav-list>
+
+</div>
+
+
+
+
+
+
+
+
+

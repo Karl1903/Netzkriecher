@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: worker
+  cloud:
+    kubernetes:
+      config:
+        name: netzkriecher-worker-configmap
+        namespace: netzkriecher
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+server:
+  shutdown: graceful

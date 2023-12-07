@@ -1,0 +1,32 @@
+ 
+<h1 class="heading"><strong>HTTP </strong>Demo</h1>
+ 
+<div class="form-group">
+  <label for="rootWebsiteName">Website Name to Crawl</label>
+  <input type="text" class="form-control" name="rootWebsiteName" [(ngModel)]="rootWebsiteName">
+</div>
+ 
+<div class="form-group">
+  <button type="button" (click)="getWebsiteNodes()">Get Website Nodes</button>
+</div>
+ 
+<div *ngIf="loading">loading...</div>
+ 
+<div *ngIf="errorMessage" class="alert alert-warning">
+  <strong>Warning!</strong> {{errorMessage | json}}
+</div>
+ 
+<table class='table'>
+  <thead>
+    <tr>
+      <th>HTML Url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let website of websites;">
+      <td>{{website.map}}</td>
+    </tr>
+  </tbody>
+</table>
+ 
+<pre>{{websites | json}}</pre>

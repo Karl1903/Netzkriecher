@@ -1,0 +1,123 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  name: netzkriecher-worker-configmap
+  namespace: netzkriecher
+data:
+  application.yaml: |-
+    debug: false
+
+    spring:
+      redis:
+        host: 'redis-master.netzkriecher.svc.cluster.local'
+        #host: 'localhost'
+        password: ''
+        port: 6379
+      application:
+        name: worker
+      lifecycle:
+        timeout-per-shutdown-phase: 30s
+
+    management:
+      endpoint:
+        health:
+          probes:
+            enabled: true
+          group:
+            readiness:
+              include: ping
+      health:
+        redis:
+          enabled: false
+        readinessState:
+          enabled: true
+        livenessState:
+          enabled: true
+
+    server:
+      shutdown: graceful
+      port: 8080
+
+    crawler:
+      politnessDelay: 200
+      maxPagesToFetch: 1000
+      numberOfCrawlers: 8
+      maxDepth: 5
+---
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: netzkriecher-worker
+  namespace: netzkriecher
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: netzkriecher-worker
+
+  template:
+    metadata:
+      labels:
+        app: netzkriecher-worker
+
+    spec:
+      containers:
+        - image: netzkriecher/worker
+          imagePullPolicy: Always
+          name: worker
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 50Mi
+              cpu: 50m
+            limits:
+              memory: 1Gi
+              cpu: 1000m
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: netzkriecher-worker
+  namespace: netzkriecher
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+  selector:
+    app: netzkriecher-worker
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: netzkriecher-worker
+  namespace: netzkriecher
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+    - host: worker.fbb413fd73724ec8b482.westeurope.aksapp.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: netzkriecher-worker
+                port:
+                  number: 8080

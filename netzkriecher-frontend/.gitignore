@@ -1,0 +1,176 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+
+
+# Angular Stuff
+
+
+.DS_STORE
+
+/dist/
+/bazel-out
+/integration/bazel/bazel-*
+*.log
+node_modules
+
+# Include when developing application packages.
+pubspec.lock
+.c9
+.idea/
+.devcontainer/*
+!.devcontainer/README.md
+!.devcontainer/recommended-devcontainer.json
+!.devcontainer/recommended-Dockerfile
+.settings/
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+*.swo
+*.swp
+modules/.settings
+modules/.vscode
+.vimrc
+.nvimrc
+
+# Don't check in secret files
+*secret.js
+
+# Ignore npm/yarn debug log
+npm-debug.log
+yarn-error.log
+
+# build-analytics
+.build-analytics
+
+# rollup-test output
+/modules/rollup-test/dist/
+
+# User specific bazel settings
+.bazelrc.user
+
+# User specific ng-dev settings
+.ng-dev.user*
+
+.notes.md
+baseline.json
+
+# Ignore .history for the xyz.local-history VSCode extension
+.history
+
+# Husky
+.husky/_
+.angular/cache/babel-webpack/2dc8e52c61855fd8177e1437cc47975d.json
+.angular/cache/babel-webpack/6d3da5c427ccc281293ecdf2ab4036bc.json
+.angular/cache/babel-webpack/8ab2db8a320bd79b64e52b2e92df77b9.json
+.angular/cache/babel-webpack/8bcf6eac6d511e5be51137a09f175988.json
+.angular/cache/babel-webpack/8e401f8d54b301c1eb870917c89629cf.json
+.angular/cache/babel-webpack/20cbd15d98c4973aece78c9562e68928.json
+.angular/cache/babel-webpack/22e5224336f8ac7e9d3a10802f1d1136.json
+.angular/cache/babel-webpack/035f2d6bae41899fc933cafcbf8dbadf.json
+.angular/cache/babel-webpack/53c8868f00458c97c4859f8082f30fbf.json
+.angular/cache/babel-webpack/65df88601d7691bad87b27c860e22639.json
+.angular/cache/babel-webpack/80f0d3a5afe27e6bd3e3b7672cfdd36a.json
+.angular/cache/babel-webpack/0435c28529fb0474aedde00b6c9cd3cd.json
+.angular/cache/babel-webpack/518f7933059def6d4f4a62c583f77479.json
+.angular/cache/babel-webpack/578cd1340ca952c5bad5272559a95025.json
+.angular/cache/babel-webpack/645e336810f111e5f16b9c7567924b2d.json
+.angular/cache/babel-webpack/1454d9386de63fce5a337bead873c113.json
+.angular/cache/babel-webpack/4072d444b551f7cb5ae55981cbc846a6.json
+.angular/cache/babel-webpack/4995cc678eaf4312efd2b3afafdc159f.json
+.angular/cache/babel-webpack/6548d0f3c01aba110eac60c4824acb08.json
+.angular/cache/babel-webpack/8550ea31ecafb3b6deb9e4cb2c31bf6c.json
+.angular/cache/babel-webpack/8692f6f136c1cae1275a7f499b2249c2.json
+.angular/cache/babel-webpack/33623b9acd25a6eeff0ab49134228f42.json
+.angular/cache/babel-webpack/44969f6cf9661c19df700efdd99722ab.json
+.angular/cache/babel-webpack/209859bbe67dcff2f7a7b80e5a103ab7.json
+.angular/cache/babel-webpack/944014a49886c7184eefcbb0b7ee9a7e.json
+.angular/cache/babel-webpack/52802656e4abdf2d096775b856de094a.json
+.angular/cache/babel-webpack/a5f864d9ba99f88f48d785a09b954807.json
+.angular/cache/babel-webpack/ad11abbd21275bc1655121d0c909eba2.json
+.angular/cache/babel-webpack/b9b143a89063a66576d4d00743c6d758.json
+.angular/cache/babel-webpack/b5950d967814d6bb1b7434358080103a.json
+.angular/cache/babel-webpack/d968f2e7b72983b5e30ccec60a80bc42.json
+.angular/cache/babel-webpack/d400148dd8afbe512dca9d8f39693ff3.json
+.angular/cache/babel-webpack/d0604019bc6ee0c8524a531db592d4b9.json
+.angular/cache/babel-webpack/dbf23bd1af6788106827a536debfc30a.json
+.angular/cache/babel-webpack/e1f7dac0cc4c3f29b45ad0174e36929f.json
+.angular/cache/babel-webpack/f60ae36108956be0fb079934971f8040.json
+.angular/cache/babel-webpack/fb2d84b7971646dd3af729c87812744d.json
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/0.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/1.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/2.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/3.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/4.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/5.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/6.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/7.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/8.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/9.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/10.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/11.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/12.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/13.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/14.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/index.pack
+.angular/cache/angular-webpack/8f6c056edc52af2f9f3144f970ae97b83a5150b8/index.pack.old
+.angular/cache/babel-webpack/3d660f780a883e1c35ca7b9642e33103.json
+.angular/cache/babel-webpack/6b5f9659352999fc120fe8a3d21341e3.json
+.angular/cache/babel-webpack/8a5e413e95680b64d530203d3853efb3.json
+.angular/cache/babel-webpack/61b33318ebe96a9e02e0909c79d8bb7f.json
+.angular/cache/babel-webpack/101eccd89a09604188b4943de5a0398b.json
+.angular/cache/babel-webpack/9459e3c7aae39c5e24f637aa0f6bb4b0.json
+.angular/cache/babel-webpack/9797bd5933d34fcb1cccff72f9152afb.json
+.angular/cache/babel-webpack/34150e721a3095910f458a41b13f0c85.json
+.angular/cache/babel-webpack/201346ef9f4e14eac2be490e5e3e56ec.json
+.angular/cache/babel-webpack/3329063d1b4f0ae4ec182b68c1b94aea.json
+.angular/cache/babel-webpack/a3ec103e26f5b5bfa7c8939ee0c54322.json
+.angular/cache/babel-webpack/c99d213f333d0af9483b159279d6bba5.json
+.angular/cache/babel-webpack/c3181bddec5a258c916db9187984ce58.json
+.angular/cache/babel-webpack/cfaa0599a16f59072ada802be40d0c6d.json
+.angular/cache/babel-webpack/dd860b6a0c1d1f911a8ae819e0dc539d.json
+.angular/cache/babel-webpack/e24ac22f597cbd5b96d23790ba763d5b.json
+.angular/cache/babel-webpack/f503843eb4200ff7cfdce4b1b4320f1c.json

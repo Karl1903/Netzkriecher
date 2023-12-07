@@ -1,0 +1,8 @@
+.dockerignore
+Dockerfile
+.git
+.gitignore
+.idea
+aks-deploy.yml
+HELP.md
+README.md

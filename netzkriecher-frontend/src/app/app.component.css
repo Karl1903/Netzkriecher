@@ -1,0 +1,24 @@
+.float
+{
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.clearfix
+{
+    clear:both
+}
+
+.headerItem
+{
+    border: 1px solid steelblue;
+    background-color: rgb(245, 245, 245);
+}
+
+.headerItems
+{
+    list-style-type:none;
+
+}

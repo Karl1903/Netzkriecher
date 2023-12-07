@@ -1,0 +1,18 @@
+<div>
+  <div class="toolbar, float" role="banner">
+    <img height="70"
+         alt="Netzkriecher-Logo"
+         src="assets/Images/Netzkriecher-Logo-18.png"/>
+  </div>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+  <nav >
+    <ul class="headerItems">
+      <li class="float"><a routerLink="/graph" routerLinkActive="active">Graph</a></li>
+      <li class="float"><a routerLink="/website-list" routerLinkActive="active">Website-List</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="clearfix"></div>
+
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
